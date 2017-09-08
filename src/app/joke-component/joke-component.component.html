@@ -1,0 +1,9 @@
+<app-joke-form (jokeCreated)="addJoke($event)"></app-joke-form>
+<br/>
+<div class="card card-block" *ngFor="let j of jokes; let idx=index">
+    <h4 class="card-title">{{j.setup}}</h4>
+    <p class="card-text" [hidden]="j.hide">{{j.punchline}}</p>
+    <br/>
+  <p class="btn btn-primary" (click)='toggle(j)' > {{tellBtn}} </p>
+  <p class="btn btn-secondary" (click)='delete(idx)' > {{delBtn}} </p>
+</div>
